@@ -140,6 +140,7 @@ import FloatingWhatsApp from './components/Floatingwhatsapp';
 import ScrollToTop from './components/ScrollToTop';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import CookiePolicyPage from './pages/CookiePolicyPage';
+import CookieConsentManager from './components/cookies/CookieConsentManager';
 // import ParticleBackground from './components/ParticleBackground';
  
 function App() {
@@ -215,6 +216,7 @@ function App() {
         </main>
         <Footer />
         <FloatingWhatsApp />
+        <CookieConsentManager />
        {/* Fix: Wrapper div ko yahan close kiya hai */}
     </>
   );
