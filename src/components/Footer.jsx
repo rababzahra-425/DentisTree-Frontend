@@ -22,7 +22,7 @@ const Footer = () => {
             <div className="mt-4">
               <h6 className="fw-bold mb-3 text-uppercase small" style={{ letterSpacing: '2px', color: '#00aaff' }}>Follow Our Journey</h6>
               <div className="d-flex gap-3">
-                <a href="https://www.facebook.com/profile.php?id=61576983534359" className="social-link" target="_blank" rel="noopener noreferrer"><i className="bi bi-facebook"></i></a>
+                <a href="https://www.facebook.com/share/191yAcqH9L/" className="social-link" target="_blank" rel="noopener noreferrer"><i className="bi bi-facebook"></i></a>
                 <a href="https://www.instagram.com/dentistree_swl?igsh=YjJrazZqYmc0em85" className="social-link"rel="noopener noreferrer"  ><i className="bi bi-instagram"></i></a>
                 <a href="https://wa.me/923217450249" className="social-link" target="_blank" rel="noopener noreferrer"><i className="bi bi-whatsapp"></i></a>
                 {/* <a href="#" className="social-link"><i className="bi bi-linkedin"></i></a> */}
