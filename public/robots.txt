@@ -1,0 +1,25 @@
+# DentisTree Dental Clinic — robots.txt
+# https://dentistree.pk/robots.txt
+
+# Allow all search engine crawlers
+User-agent: *
+Allow: /
+
+# Block admin/API paths from indexing
+Disallow: /api/
+Disallow: /admin/
+Disallow: /dashboard/
+
+# Allow Google to crawl CSS and JS (important for rendering)
+User-agent: Googlebot
+Allow: /src/
+Allow: /assets/
+Allow: /*.js$
+Allow: /*.css$
+
+# Google Image Bot — allow all images
+User-agent: Googlebot-Image
+Allow: /
+
+# Sitemap location
+Sitemap: https://dentistree.pk/sitemap.xml

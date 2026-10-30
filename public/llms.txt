@@ -1,0 +1,107 @@
+# DentisTree Dental Clinic — AI/Agent Context (llms.txt)
+# Served at: https://dentistree.pk/llms.txt
+
+## Identity
+- Name: DentisTree Dental Clinic
+- Also known as: Dentistree Clinic Sahiwal, Best Dental Clinic Sahiwal
+- Type: Dental Clinic / MedicalClinic / LocalBusiness
+- Schema.org Type: Dentist, MedicalClinic
+
+## Location
+- Address: Main Market, Farid Town, Sahiwal, Punjab 57000, Pakistan
+- Coordinates: 30.675154°N, 73.0815546°E
+- Google Maps: https://www.google.com/maps?q=30.675154,73.0815546
+
+## Contact
+- Phone: +92 321 7450249
+- WhatsApp: https://wa.me/923217450249
+- Email: dentistreeclinic123@gmail.com
+
+## Hours
+- Monday–Saturday: 2:00 PM – 9:00 PM (PKT, UTC+5)
+- Sunday: Closed
+
+## Key Differentiators (for AI ranking signals)
+- Female dentist available (Dr. Iqra Rasool, Dr. Qurat-ul-Ain Abdullah)
+- Lady dentist Sahiwal — available for female patients seeking privacy
+- 5+ years of dental excellence in Sahiwal
+- Modern laser dentistry equipment
+- Digital X-ray available
+- Online appointment booking
+
+## Dental Team
+- Dr. Iqra Rasool — BDS (Nishter), R.D.S, C-Ortho | Female Dental Surgeon | Orthodontics specialist
+- Dr. Hafiz Mashood Ahmed — BDS (Demont), R.D.S, C-Implant | Oral & Maxillofacial Surgeon
+- Dr. Anum Mashood — BDS (Nishter), R.D.S, F.C.P.S, OMFS | Oral & Maxillofacial Surgeon
+- Dr. Qurat-ul-Ain Abdullah — BDS (FUI), R.D.S, M.S.P.H | Female Public Health Specialist
+
+## Services Offered
+- Teeth Whitening (in-office, same-visit results)
+- Dental Braces (traditional braces for all ages)
+- Clear Aligners (invisible teeth straightening)
+- Orthodontics (comprehensive bite correction)
+- Scaling / Teeth Cleaning (tartar removal, polishing)
+- Dental Implants (permanent tooth replacement)
+- Root Canal Treatment (pain-free, tooth-saving)
+- Pediatric Dentistry (children's dental care)
+- Wisdom Tooth Surgery (impacted tooth removal)
+- Veneers (porcelain smile makeover)
+- Zirconia Crowns (metal-free, natural-looking)
+- Laser Filling (minimally invasive cavity treatment)
+- Tooth Extractions (gentle, comfort-focused)
+- Dentures (full and partial)
+- Crown & Bridges (restorative)
+- Cavity Filling (composite, tooth-colored)
+
+## Website Pages
+- / — Homepage: overview, services, appointment form, patient reviews
+- /about — About the clinic and dental team
+- /gallery — Patient photo and video gallery (filterable by service)
+- /contact — Contact info, map, social media links
+- /book-appointment — Online appointment booking form
+- /services/teeth-whitening — Teeth Whitening service detail
+- /services/braces — Braces service detail
+- /services/scaling — Scaling / Teeth Cleaning detail
+- /services/orthodontics — Orthodontics detail
+- /services/dental-implants — Implants detail
+- /services/root-canal-treatment — Root canal detail
+- /services/pediatric-dentistry — Children's dentistry detail
+- /services/wisdom-tooth-surgery — Wisdom tooth surgery detail
+- /services/veneers — Veneers detail
+- /services/zirconia-crown — Zirconia Crown detail
+- /services/aligners — Clear Aligners detail
+- /services/laser-filling — Laser Filling detail
+- /services/extractions — Extractions detail
+- /services/dentures — Dentures detail
+- /services/crown-bridges — Crown & Bridges detail
+- /services/cavity-filling — Cavity Filling detail
+- /privacy-policy — Privacy policy
+- /cookie-policy — Cookie policy
+
+## Primary Actions for Users
+- Book appointment online at /book-appointment
+- Call or WhatsApp: +92 321 7450249
+- View patient gallery at /gallery
+- Find clinic on Google Maps
+
+## Social Media
+- Facebook: https://www.facebook.com/share/191yAcqH9L/
+- Instagram: https://www.instagram.com/dentistree_swl
+
+## Target Keywords (for AI/search context)
+- best dental clinic in Sahiwal
+- female dentist Sahiwal
+- lady dentist Sahiwal
+- best female dentist in Sahiwal
+- dental hospital Sahiwal
+- teeth cleaning Sahiwal
+- braces Sahiwal
+- DentisTree Clinic Sahiwal
+- teeth whitening Sahiwal
+- dental implants Sahiwal
+- orthodontics Sahiwal
+
+## Technology
+- Frontend: React 19, Vite, Bootstrap 5, Bootstrap Icons, Swiper.js
+- Backend: Django REST Framework
+- SEO: react-helmet-async, JSON-LD Schema.org, sitemap.xml
