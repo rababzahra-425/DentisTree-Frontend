@@ -2,6 +2,9 @@ import React, { useEffect } from 'react';
 import { Link, useParams, Navigate } from 'react-router-dom';
 import { getServiceBySlug, getRelatedServices } from '../data/servicesData';
 import './ServiceDetailPage.css';
+import SEO from './SEO';
+import { getServiceSEO } from '../seo/seoConfig';
+import { dentistSchema, buildBreadcrumbSchema } from '../seo/localBusinessSchema';
 
 function useScrollReveal() {
   useEffect(() => {
@@ -23,6 +26,7 @@ const ServiceDetailPage = () => {
   const { slug } = useParams();
   const service = getServiceBySlug(slug);
   useScrollReveal();
+  const serviceSEO = getServiceSEO(service);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -36,6 +40,18 @@ const ServiceDetailPage = () => {
 
   return (
     <div className="sdp-root">
+      {/* ── Per-Service SEO ── */}
+      <SEO
+        {...serviceSEO}
+        schemas={[
+          dentistSchema,
+          buildBreadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Services', path: '/#services' },
+            { name: service.title, path: `/services/${service.slug}` },
+          ]),
+        ]}
+      />
       <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
 
@@ -125,8 +141,9 @@ const ServiceDetailPage = () => {
               className="sdp-cta-btn sdp-cta-outline"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={`WhatsApp DentisTree about ${service.title}`}
             >
-              <i className="bi bi-whatsapp me-2" />
+              <i className="bi bi-whatsapp me-2" aria-hidden="true" />
               WhatsApp Us
             </a>
           </aside>

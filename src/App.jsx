@@ -142,6 +142,16 @@ import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import CookiePolicyPage from './pages/CookiePolicyPage';
 import CookieConsentManager from './components/cookies/CookieConsentManager';
 // import ParticleBackground from './components/ParticleBackground';
+
+/* ── SEO Imports ── */
+import SEO from './components/SEO';
+import { seoConfig } from './seo/seoConfig';
+import {
+  dentistSchema,
+  websiteSchema,
+  homeFAQSchema,
+  buildBreadcrumbSchema,
+} from './seo/localBusinessSchema';
  
 function App() {
   const formRef = useRef();
@@ -155,18 +165,26 @@ function App() {
  
   return (
     <>
-      {/* 1. Background layer pooray project ke pichhe chalegi */}
-      {/* <ParticleBackground />
- 
-       Fix: Div ko yahan open kiya taake saara content layers ke upar aa sake 
-      <div style={{ position: "relative", zIndex: 1 }}> */}
-        <main>
+      {/* Skip to main content for keyboard users */}
+      <a href="#main-content" className="skip-to-content">Skip to main content</a>
+        <main id="main-content">
           <ScrollToTop />
           <Routes>
+
+            {/* ── HOME ── */}
             <Route 
               path="/" 
               element={
                 <> 
+                  <SEO
+                    {...seoConfig['/']}
+                    schemas={[
+                      dentistSchema,
+                      websiteSchema,
+                      homeFAQSchema,
+                      buildBreadcrumbSchema([{ name: 'Home', path: '/' }]),
+                    ]}
+                  />
                   <Navbar formRef={formRef}/>
                   <Hero formRef={formRef}/>
  
@@ -204,14 +222,94 @@ function App() {
                 </>
               } 
             />
-            {/* Ab yeh sab routes bhi is dynamic wrapper ke andar hain */}
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/book-appointment" element={<AppointmentPage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/gallery" element={<Gallerypage />} />
+
+            {/* ── CONTACT ── */}
+            <Route path="/contact" element={
+              <>
+                <SEO
+                  {...seoConfig['/contact']}
+                  schemas={[
+                    dentistSchema,
+                    buildBreadcrumbSchema([
+                      { name: 'Home', path: '/' },
+                      { name: 'Contact Us', path: '/contact' },
+                    ]),
+                  ]}
+                />
+                <ContactPage />
+              </>
+            } />
+
+            {/* ── BOOK APPOINTMENT ── */}
+            <Route path="/book-appointment" element={
+              <>
+                <SEO
+                  {...seoConfig['/book-appointment']}
+                  schemas={[
+                    dentistSchema,
+                    buildBreadcrumbSchema([
+                      { name: 'Home', path: '/' },
+                      { name: 'Book Appointment', path: '/book-appointment' },
+                    ]),
+                  ]}
+                />
+                <AppointmentPage />
+              </>
+            } />
+
+            {/* ── ABOUT ── */}
+            <Route path="/about" element={
+              <>
+                <SEO
+                  {...seoConfig['/about']}
+                  schemas={[
+                    dentistSchema,
+                    buildBreadcrumbSchema([
+                      { name: 'Home', path: '/' },
+                      { name: 'About Us', path: '/about' },
+                    ]),
+                  ]}
+                />
+                <AboutPage />
+              </>
+            } />
+
+            {/* ── GALLERY ── */}
+            <Route path="/gallery" element={
+              <>
+                <SEO
+                  {...seoConfig['/gallery']}
+                  schemas={[
+                    dentistSchema,
+                    buildBreadcrumbSchema([
+                      { name: 'Home', path: '/' },
+                      { name: 'Patient Gallery', path: '/gallery' },
+                    ]),
+                  ]}
+                />
+                <Gallerypage />
+              </>
+            } />
+
+            {/* ── SERVICE DETAIL (SEO handled inside ServiceDetailPage) ── */}
             <Route path="/services/:slug" element={<ServiceDetailPage />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-            <Route path="/cookie-policy" element={<CookiePolicyPage />} />
+
+            {/* ── PRIVACY POLICY ── */}
+            <Route path="/privacy-policy" element={
+              <>
+                <SEO {...seoConfig['/privacy-policy']} />
+                <PrivacyPolicyPage />
+              </>
+            } />
+
+            {/* ── COOKIE POLICY ── */}
+            <Route path="/cookie-policy" element={
+              <>
+                <SEO {...seoConfig['/cookie-policy']} />
+                <CookiePolicyPage />
+              </>
+            } />
+
           </Routes>
         </main>
         <Footer />
