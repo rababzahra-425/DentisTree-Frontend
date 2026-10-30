@@ -109,3 +109,40 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+/* ── Accessibility: Global focus-visible styles ── */
+/* Ensures keyboard users always see a clear focus ring */
+:focus-visible {
+  outline: 3px solid #003366;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Remove default focus outline only when using pointer/touch */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ── Skip-to-content link for keyboard navigation ── */
+.skip-to-content {
+  position: absolute;
+  top: -60px;
+  left: 0;
+  background: #003366;
+  color: #fff;
+  padding: 10px 20px;
+  z-index: 10001;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 0 0 8px 0;
+  transition: top 0.2s ease;
+}
+.skip-to-content:focus {
+  top: 0;
+}
+
+/* ── Prevent layout shifts on dynamic content ── */
+img, video {
+  max-width: 100%;
+  height: auto;
+}
