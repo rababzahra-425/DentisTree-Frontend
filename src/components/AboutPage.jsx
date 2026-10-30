@@ -464,11 +464,14 @@ const AboutPage = () => {
       {/* ── HERO ──────────────────────────────────────── */}
       <header className="page-header">
         <div className="page-header-inner">
-          <span className="page-hero-eyebrow" data-aos="fade-up">About DentisTree</span>
-          <h1 data-aos="fade-up" data-aos-delay="80">About Us</h1>
+          <span className="page-hero-eyebrow" data-aos="fade-up">About DentisTree — Best Dental Clinic in Sahiwal</span>
+          <h1 data-aos="fade-up" data-aos-delay="80">
+            Expert Dental Care in Sahiwal<br />
+            <span style={{ fontWeight: 400, fontSize: '0.7em' }}>Female Dentist Available</span>
+          </h1>
           <div className="page-hero-divider" data-aos="fade-up" data-aos-delay="140" />
           <p data-aos="fade-up" data-aos-delay="180">
-            Compassionate care. Expert hands. Beautiful smiles.
+            Compassionate care. Expert hands. Beautiful smiles — in Sahiwal, Punjab.
           </p>
         </div>
       </header>
@@ -476,34 +479,46 @@ const AboutPage = () => {
       {/* ── STORY ─────────────────────────────────────── */}
       <section className="main-story">
         <div className="story-img" data-aos="fade-right">
-          <img src={aboutImg} alt="DentisTree Clinic" />
+          <img
+            src={aboutImg}
+            alt="Patient receiving dental treatment at DentisTree Clinic Sahiwal — best dental clinic in Sahiwal"
+          />
         </div>
         <div className="story-content" data-aos="fade-left">
-          <span className="label-pill">The Best Dental Hospital</span>
-          <h2>Your Journey to a Perfect Smile</h2>
+          <span className="label-pill">Best Dental Clinic in Sahiwal</span>
+          <h2>Your Journey to a Healthy Smile in Sahiwal</h2>
           <p>
             DentisTree is built with a vision to provide professional and compassionate
             dental care in Sahiwal. We combine years of experience with digital
-            dentistry to provide results that last. Our team ensures that every visit is
-            comfortable, safe, and tailored to your specific dental needs.
+            dentistry to provide results that last. Our team — including qualified
+            female dentists — ensures that every visit is comfortable, safe, and
+            tailored to your specific dental needs.
           </p>
         </div>
       </section>
 
       {/* ── WHATSAPP CTA ──────────────────────────────── */}
-      <section className="whatsapp-cta-panel">
-        <h3 data-aos="fade-up">Ready to Meet Our Team?</h3>
-        <p data-aos="fade-up" data-aos-delay="80">Expert consultants are just a message away. Get same-week appointments easily.</p>
-        <a href="https://wa.me/923217450249" className="btn-wa" data-aos="zoom-in" data-aos-delay="160">
-          <i className="bi bi-whatsapp"></i> Book via WhatsApp
+      <section className="whatsapp-cta-panel" aria-label="Book appointment at DentisTree Sahiwal via WhatsApp">
+        <h3 data-aos="fade-up">Ready to Meet Our Team in Sahiwal?</h3>
+        <p data-aos="fade-up" data-aos-delay="80">Expert consultants are just a message away. Get same-week appointments easily at our Sahiwal clinic.</p>
+        <a
+          href="https://wa.me/923217450249"
+          className="btn-wa"
+          data-aos="zoom-in"
+          data-aos-delay="160"
+          aria-label="Book a dental appointment at DentisTree Sahiwal via WhatsApp"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i className="bi bi-whatsapp" aria-hidden="true"></i> Book via WhatsApp
         </a>
       </section>
 
       {/* ── DOCTORS ───────────────────────────────────── */}
-      <section className="doctors-section">
+      <section className="doctors-section" aria-label="Dental team at DentisTree Clinic Sahiwal">
         <div className="section-header" data-aos="fade-up">
           <span className="label-pill">Our Specialists</span>
-          <h2>Qualified Dental Surgeons</h2>
+          <h2>Qualified Dentists in Sahiwal — Female Doctors Available</h2>
         </div>
 
         <div className="docs-grid">
@@ -515,7 +530,10 @@ const AboutPage = () => {
               style={{ transitionDelay: `${idx * 80}ms` }}
             >
               <div className="doc-thumb">
-                <img src={doc.photo} alt={doc.name} />
+                <img
+                  src={doc.photo}
+                  alt={`${doc.name} — ${doc.role} at DentisTree Dental Clinic Sahiwal`}
+                />
               </div>
               <div className="doc-info">
                 <h3>{doc.name}</h3>

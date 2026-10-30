@@ -58,6 +58,7 @@ const clinicOpen = isClinicOpen();
 
   const googleMapIframe = (
     <iframe
+      title="DentisTree Clinic Location on Google Maps"
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3431.5373457766154!2d73.0815546!3d30.675154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3922c90022ea7c61%3A0x532d4122a3dc769!2sDentis%20Tree!5e0!3m2!1sen!2s!4v1777145459703!5m2!1sen!2s"
       width="100%" height="100%"
       style={{ border: 0 }}
@@ -74,13 +75,14 @@ const clinicOpen = isClinicOpen();
       {/* ── HERO (matches About & Gallery style) ─────── */}
       <header className="cp-hero">
         <div className="cp-hero-inner">
-          <span className="cp-eyebrow" data-aos="fade-up">Contact DentisTree</span>
+          <span className="cp-eyebrow" data-aos="fade-up">Contact DentisTree — Dental Clinic Sahiwal</span>
           <h1 className="cp-hero-title" data-aos="fade-up" data-aos-delay="80">
-            Get In Touch
+            Book an Appointment<br />
+            <span style={{ fontWeight: 400, fontSize: '0.7em' }}>Dental Clinic in Sahiwal, Punjab</span>
           </h1>
           <div className="cp-hero-divider" data-aos="fade-up" data-aos-delay="140" />
           <p className="cp-hero-sub" data-aos="fade-up" data-aos-delay="180">
-            Reach out for appointments, queries, or anything dental.<br />
+            Reach out for dental appointments, queries, or consultations in Sahiwal.<br />
             Our team is always happy to help your smile shine.
           </p>
         </div>
@@ -96,8 +98,14 @@ const clinicOpen = isClinicOpen();
                 <div className="icon-wrap"><i className="bi bi-telephone-fill" /></div>
                 <div className="card-title">Call &amp; WhatsApp</div>
                 <p className="card-detail">+92 321 7450249</p>
-                <a href="https://wa.me/923217450249" className="btn-whatsapp">
-                  <i className="bi bi-whatsapp" /> WhatsApp Now
+                <a
+                  href="https://wa.me/923217450249"
+                  className="btn-whatsapp"
+                  aria-label="Book dental appointment at DentisTree Sahiwal via WhatsApp"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="bi bi-whatsapp" aria-hidden="true" /> WhatsApp Now
                 </a>
               </div>
             </div>
@@ -150,8 +158,9 @@ const clinicOpen = isClinicOpen();
     target="_blank"
     rel="noopener noreferrer"
     className="social-btn btn-msng"
+    aria-label="Message DentisTree on Messenger"
   >
-    <i className="bi bi-messenger" /> Messenger
+    <i className="bi bi-messenger" aria-hidden="true" /> Messenger
   </a>
 
   <a
@@ -159,8 +168,9 @@ const clinicOpen = isClinicOpen();
     target="_blank"
     rel="noopener noreferrer"
     className="social-btn btn-ig"
+    aria-label="Follow DentisTree on Instagram"
   >
-    <i className="bi bi-instagram" /> Instagram
+    <i className="bi bi-instagram" aria-hidden="true" /> Instagram
   </a>
 
   <a
@@ -168,8 +178,9 @@ const clinicOpen = isClinicOpen();
     target="_blank"
     rel="noopener noreferrer"
     className="social-btn btn-fb"
+    aria-label="Follow DentisTree on Facebook"
   >
-    <i className="bi bi-facebook" /> Facebook
+    <i className="bi bi-facebook" aria-hidden="true" /> Facebook
   </a>
 </div>
         </div>

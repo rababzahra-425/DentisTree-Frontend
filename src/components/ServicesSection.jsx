@@ -35,10 +35,11 @@ const ServicesSection = () => {
         id="services"
         className="services-section-padding"
         style={{ backgroundColor: '#f8f9fa' }}
+        aria-label="Dental services available at DentisTree Clinic Sahiwal"
       >
         <div className="container text-center">
           <h2 className="services-main-title">
-            Best Dental Services In Your Location
+            Our Dental Services in Sahiwal
           </h2>
 
           <div className="row g-4 justify-content-center">
@@ -49,6 +50,7 @@ const ServicesSection = () => {
                   tabIndex={0}
                   className="card border-0 shadow-sm h-100 overflow-hidden rounded-4 service-card-hover"
                   style={{ transition: 'transform 0.3s ease', cursor: 'pointer' }}
+                  aria-label={`View details for ${service.title}`}
                   onClick={() => openModal(service)}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
@@ -72,8 +74,9 @@ const ServicesSection = () => {
                     <span
                       className="d-inline-flex align-items-center gap-1 mt-2"
                       style={{ color: '#0097b2', fontSize: '0.85rem', fontWeight: 600 }}
+                      aria-hidden="true"
                     >
-                      Learn more <i className="bi bi-arrow-right" />
+                      Learn more <i className="bi bi-arrow-right" aria-hidden="true" />
                     </span>
                   </div>
                 </div>
