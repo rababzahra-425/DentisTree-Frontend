@@ -18,11 +18,13 @@ const Topbar = () => {
   const socialLinks = [
     {
       href: 'https://www.facebook.com/',
-      icon: 'uil-facebook-f', // Added -f for better icon support
+      icon: 'uil-facebook-f',
+      label: 'Follow us on Facebook',
     },
     {
       href: 'https://www.instagram.com/dentistree_swl?igsh=YjJrazZqYmc0em85',
       icon: 'uil-instagram',
+      label: 'Follow us on Instagram',
     },
   ];
 
@@ -60,15 +62,16 @@ const Topbar = () => {
 
             {/* Social Links Fix */}
             <div className="d-flex align-items-center ms-4">
-              {socialLinks.map(({ href, icon }, index) => (
+              {socialLinks.map(({ href, icon, label }, index) => (
                 <a
                   key={index}
                   href={href}
                   className="text-white hover ms-3"
                   target="_blank"
                   rel="noreferrer"
+                  aria-label={label}
                 >
-                  <i className={icon} style={{ fontSize: '18px' }} />
+                  <i className={icon} style={{ fontSize: '18px' }} aria-hidden="true" />
                 </a>
               ))}
             </div>

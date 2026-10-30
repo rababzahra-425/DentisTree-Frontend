@@ -325,20 +325,26 @@ const ReviewSection = () => {
               <h5 className="fw-bold mb-4" style={{ color: '#003366' }}>Leave a Review</h5>
               <form onSubmit={handleSubmit} className="row g-3">
                 <div className="col-md-8">
+                  <label htmlFor="review-name" className="form-label small fw-bold text-muted">Full Name <span aria-hidden="true">*</span></label>
                   <input 
+                    id="review-name"
                     type="text" 
                     className="form-control border-0 py-2 px-3 shadow-none" 
-                    placeholder="Full Name" 
+                    placeholder="e.g. Sara Ahmed"
                     style={{ borderRadius: '10px' }}
+                    aria-required="true"
                     required
                     value={formData.customer_name} 
                     onChange={(e) => setFormData({...formData, customer_name: e.target.value})} 
                   />
                 </div>
                 <div className="col-md-4">
+                  <label htmlFor="review-rating" className="form-label small fw-bold text-muted">Rating</label>
                   <select 
+                    id="review-rating"
                     className="form-select border-0 py-2 px-3 shadow-none" 
                     style={{ borderRadius: '10px' }}
+                    aria-label="Select star rating"
                     value={formData.rating} 
                     onChange={(e) => setFormData({...formData, rating: parseInt(e.target.value)})}
                   >
@@ -346,11 +352,14 @@ const ReviewSection = () => {
                   </select>
                 </div>
                 <div className="col-12">
+                  <label htmlFor="review-comment" className="form-label small fw-bold text-muted">Your Review <span aria-hidden="true">*</span></label>
                   <textarea 
+                    id="review-comment"
                     className="form-control border-0 py-2 px-3 shadow-none" 
                     rows="2" 
                     placeholder="Your message..." 
                     style={{ borderRadius: '10px' }}
+                    aria-required="true"
                     required
                     value={formData.comment} 
                     onChange={(e) => setFormData({...formData, comment: e.target.value})}
@@ -376,12 +385,25 @@ const ReviewSection = () => {
 
       {/* Modal remains the same... */}
       {showModal && (
-        <div className="modal d-block" style={{ backgroundColor: 'rgba(0,0,0,0.4)', zIndex: 10000, position: 'fixed', top: 0, left: 0, width: '100%', height: '100%' }}>
+        <div
+          className="modal d-block"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="review-modal-title"
+          style={{ backgroundColor: 'rgba(0,0,0,0.4)', zIndex: 10000, position: 'fixed', top: 0, left: 0, width: '100%', height: '100%' }}
+        >
           <div className="modal-dialog modal-dialog-centered" style={{ maxWidth: '400px' }}>
             <div className="modal-content border-0 rounded-4 shadow-lg p-4 text-center">
-               <h4 className="fw-bold mb-3" style={{ color: '#003366' }}>{isError ? "Oops" : "Success"}</h4>
+               <h4 id="review-modal-title" className="fw-bold mb-3" style={{ color: '#003366' }}>{isError ? "Oops" : "Success"}</h4>
                <p className="text-muted">{modalMessage}</p>
-               <button className="btn btn-primary w-100 mt-3 rounded-pill py-2" onClick={() => setShowModal(false)} style={{ backgroundColor: '#003366', border: 'none' }}>Close</button>
+               <button
+                 className="btn btn-primary w-100 mt-3 rounded-pill py-2"
+                 onClick={() => setShowModal(false)}
+                 aria-label="Close review confirmation"
+                 style={{ backgroundColor: '#003366', border: 'none' }}
+               >
+                 Close
+               </button>
             </div>
           </div>
         </div>

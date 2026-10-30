@@ -127,20 +127,25 @@ function ImageCard({ item, onClick }) {
   const [loaded, setLoaded] = useState(false);
 
   return (
-    <div className="gp-img-card" onClick={() => onClick(item)}>
+    <button
+      className="gp-img-card"
+      onClick={() => onClick(item)}
+      aria-label={`View ${item.service || 'gallery'} image${item.description ? ': ' + item.description : ''}`}
+      style={{ background: 'none', border: 'none', padding: 0, display: 'block', width: '100%', cursor: 'pointer', textAlign: 'left' }}
+    >
       <div className="gp-img-card-inner">
         {!loaded && <div className="gp-card-shimmer" />}
         <img
           src={item.url}
-          alt={item.service || "Gallery"}
+          alt={item.service || "Gallery image"}
           className={`gp-card-img ${loaded ? "gp-card-img--loaded" : ""}`}
           onLoad={() => setLoaded(true)}
           onError={(e) => { e.target.style.display = "none"; }}
           loading="lazy"
         />
-        <div className="gp-img-overlay">
+        <div className="gp-img-overlay" aria-hidden="true">
           <div className="gp-overlay-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width="26" height="26">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" width="26" height="26" aria-hidden="true">
               <path d="M21 21l-4.35-4.35M17 11A6 6 0 115 11a6 6 0 0112 0z" strokeLinecap="round" />
               <line x1="11" y1="8" x2="11" y2="14" strokeLinecap="round" />
               <line x1="8" y1="11" x2="14" y2="11" strokeLinecap="round" />
@@ -152,7 +157,7 @@ function ImageCard({ item, onClick }) {
       {item.description && (
         <p className="gp-card-caption">{item.description}</p>
       )}
-    </div>
+    </button>
   );
 }
 
@@ -163,11 +168,13 @@ function VideoCard({ item, onClick }) {
   const [hovering, setHovering] = useState(false);
 
   return (
-    <div
+    <button
       className="gp-video-card"
       onClick={() => onClick(item)}
       onMouseEnter={() => setHovering(true)}
       onMouseLeave={() => setHovering(false)}
+      aria-label={`Play ${item.service || 'gallery'} video${item.description ? ': ' + item.description : ''}`}
+      style={{ background: 'none', border: 'none', padding: 0, display: 'block', width: '100%', cursor: 'pointer', textAlign: 'left' }}
     >
       <div className="gp-video-thumb-wrap">
         <video
@@ -176,17 +183,18 @@ function VideoCard({ item, onClick }) {
           muted
           playsInline
           preload="metadata"
+          aria-hidden="true"
         />
-        <div className={`gp-video-play-overlay ${hovering ? "gp-video-play-overlay--hover" : ""}`}>
+        <div className={`gp-video-play-overlay ${hovering ? "gp-video-play-overlay--hover" : ""}`} aria-hidden="true">
           <div className="gp-play-btn">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="30" height="30">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="30" height="30" aria-hidden="true">
               <polygon points="6,3 20,12 6,21" />
             </svg>
           </div>
         </div>
         {item.service && <span className="gp-video-tag">{item.service}</span>}
-        <span className="gp-video-badge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="11" height="11">
+        <span className="gp-video-badge" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="11" height="11" aria-hidden="true">
             <polygon points="23 7 16 12 23 17 23 7" />
             <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
           </svg>
@@ -196,7 +204,7 @@ function VideoCard({ item, onClick }) {
       {item.description && (
         <p className="gp-card-caption gp-card-caption--video">{item.description}</p>
       )}
-    </div>
+    </button>
   );
 }
 

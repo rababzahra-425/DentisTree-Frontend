@@ -22,10 +22,9 @@ const Footer = () => {
             <div className="mt-4">
               <h6 className="fw-bold mb-3 text-uppercase small" style={{ letterSpacing: '2px', color: '#00aaff' }}>Follow Our Journey</h6>
               <div className="d-flex gap-3">
-                <a href="https://www.facebook.com/share/191yAcqH9L/" className="social-link" target="_blank" rel="noopener noreferrer"><i className="bi bi-facebook"></i></a>
-                <a href="https://www.instagram.com/dentistree_swl?igsh=YjJrazZqYmc0em85" className="social-link"rel="noopener noreferrer"  ><i className="bi bi-instagram"></i></a>
-                <a href="https://wa.me/923217450249" className="social-link" target="_blank" rel="noopener noreferrer"><i className="bi bi-whatsapp"></i></a>
-                {/* <a href="#" className="social-link"><i className="bi bi-linkedin"></i></a> */}
+                <a href="https://www.facebook.com/share/191yAcqH9L/" className="social-link" target="_blank" rel="noopener noreferrer" aria-label="Follow DentisTree on Facebook"><i className="bi bi-facebook" aria-hidden="true"></i></a>
+                <a href="https://www.instagram.com/dentistree_swl?igsh=YjJrazZqYmc0em85" className="social-link" rel="noopener noreferrer" aria-label="Follow DentisTree on Instagram"><i className="bi bi-instagram" aria-hidden="true"></i></a>
+                <a href="https://wa.me/923217450249" className="social-link" target="_blank" rel="noopener noreferrer" aria-label="Chat with DentisTree on WhatsApp"><i className="bi bi-whatsapp" aria-hidden="true"></i></a>
               </div>
             </div>
           </div>
@@ -58,45 +57,56 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Column 4: Contact Info */}
-          <div className="col-lg-4 col-md-4">
+          {/* Column 4: Contact Info — with Schema.org microdata for Local SEO */}
+          <div
+            className="col-lg-4 col-md-4"
+            itemScope
+            itemType="https://schema.org/Dentist"
+          >
+            <meta itemProp="name" content="DentisTree Dental Clinic" />
+            <meta itemProp="url" content="https://dentistree.pk" />
             <h5 className="fw-bold mb-4 border-bottom border-primary border-2 pb-2 d-inline-block">Contact Us</h5>
-            <div className="d-flex mb-3 align-items-start">
+            <div className="d-flex mb-3 align-items-start" itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
               <div className="contact-icon-box me-3">
-                <i className="bi bi-geo-alt-fill"></i>
+                <i className="bi bi-geo-alt-fill" aria-hidden="true"></i>
               </div>
               <p className="mb-0 opacity-75" style={{ fontSize: '0.9rem' }}>
-                Main Market Farid Town, Sahiwal, Pakistan<br />Sahiwal, Punjab, Pakistan
+                <span itemProp="streetAddress">Main Market Farid Town</span>,{' '}
+                <span itemProp="addressLocality">Sahiwal</span>,{' '}
+                <span itemProp="addressRegion">Punjab</span>,{' '}
+                <span itemProp="addressCountry">Pakistan</span>
               </p>
             </div>
             <div className="d-flex mb-3 align-items-center">
               <div className="contact-icon-box me-3">
-                <i className="bi bi-envelope-fill"></i>
-              </div>
-<p className="mb-0 opacity-75" style={{ fontSize: '0.9rem' }}>
-  <a
-  href="https://mail.google.com/mail/?view=cm&fs=1&to=dentistreeclinic123@gmail.com"
-    style={{ color: 'inherit', textDecoration: 'none' }}
- target="_blank" 
-  rel="noopener noreferrer"
->
-  dentistreeclinic123@gmail.com
-</a>
-</p>            
-</div>
-            <div className="d-flex align-items-center">
-              <div className="contact-icon-box me-3">
-                <i className="bi bi-telephone-fill"></i>
+                <i className="bi bi-envelope-fill" aria-hidden="true"></i>
               </div>
               <p className="mb-0 opacity-75" style={{ fontSize: '0.9rem' }}>
-  <a
-    href="tel:+923217450249" 
-    rel="noopener noreferrer"
-    style={{ color: 'inherit', textDecoration: 'none' }}
-  >
-    +92 321 7450249
-  </a>
-</p>
+                <a
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=dentistreeclinic123@gmail.com"
+                  style={{ color: 'inherit', textDecoration: 'none' }}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  itemProp="email"
+                >
+                  dentistreeclinic123@gmail.com
+                </a>
+              </p>
+            </div>
+            <div className="d-flex align-items-center">
+              <div className="contact-icon-box me-3">
+                <i className="bi bi-telephone-fill" aria-hidden="true"></i>
+              </div>
+              <p className="mb-0 opacity-75" style={{ fontSize: '0.9rem' }}>
+                <a
+                  href="tel:+923217450249"
+                  rel="noopener noreferrer"
+                  style={{ color: 'inherit', textDecoration: 'none' }}
+                  itemProp="telephone"
+                >
+                  +92 321 7450249
+                </a>
+              </p>
             </div>
           </div>
         </div>

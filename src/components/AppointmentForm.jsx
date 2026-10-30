@@ -297,41 +297,88 @@ const AppointmentForm = ({ formRef}) => {
             >
               <div className="row g-4">
                 <div className="col-md-6">
-                  <input type="text" className="form-control border-0 py-3 px-4 sleek-input shadow-sm" placeholder="Full Name *" required 
-                    value={formData.patient_name} onChange={(e) => setFormData({...formData, patient_name: e.target.value})} />
+                  <label htmlFor="appt-name" className="small fw-bold text-muted mb-2 ms-2">Full Name <span aria-hidden="true">*</span></label>
+                  <input
+                    id="appt-name"
+                    type="text"
+                    className="form-control border-0 py-3 px-4 sleek-input shadow-sm"
+                    placeholder="e.g. Ali Hassan"
+                    aria-required="true"
+                    required
+                    value={formData.patient_name}
+                    onChange={(e) => setFormData({...formData, patient_name: e.target.value})}
+                  />
                 </div>
 
                 <div className="col-md-6">
-                  <input type="tel" className="form-control border-0 py-3 px-4 sleek-input shadow-sm" placeholder="Phone Number *" required 
-                    value={formData.patient_phone} onChange={(e) => setFormData({...formData, patient_phone: e.target.value})} />
+                  <label htmlFor="appt-phone" className="small fw-bold text-muted mb-2 ms-2">Phone Number <span aria-hidden="true">*</span></label>
+                  <input
+                    id="appt-phone"
+                    type="tel"
+                    className="form-control border-0 py-3 px-4 sleek-input shadow-sm"
+                    placeholder="+92 3XX XXXXXXX"
+                    aria-required="true"
+                    required
+                    value={formData.patient_phone}
+                    onChange={(e) => setFormData({...formData, patient_phone: e.target.value})}
+                  />
                 </div>
 
                 <div className="col-md-12">
-                  <input type="email" className="form-control border-0 py-3 px-4 sleek-input shadow-sm" placeholder="Email Address *" required 
-                    value={formData.patient_email} onChange={(e) => setFormData({...formData, patient_email: e.target.value})} />
+                  <label htmlFor="appt-email" className="small fw-bold text-muted mb-2 ms-2">Email Address <span aria-hidden="true">*</span></label>
+                  <input
+                    id="appt-email"
+                    type="email"
+                    className="form-control border-0 py-3 px-4 sleek-input shadow-sm"
+                    placeholder="you@example.com"
+                    aria-required="true"
+                    required
+                    value={formData.patient_email}
+                    onChange={(e) => setFormData({...formData, patient_email: e.target.value})}
+                  />
                 </div>
 
                 <div className="col-12">
-                  <select className="form-select border-0 py-3 px-4 sleek-input shadow-sm" required
-                    value={formData.service} onChange={(e) => setFormData({...formData, service: e.target.value})}>
-                    <option value="">Select Dental Service *</option>
+                  <label htmlFor="appt-service" className="small fw-bold text-muted mb-2 ms-2">Dental Service <span aria-hidden="true">*</span></label>
+                  <select
+                    id="appt-service"
+                    className="form-select border-0 py-3 px-4 sleek-input shadow-sm"
+                    aria-required="true"
+                    required
+                    value={formData.service}
+                    onChange={(e) => setFormData({...formData, service: e.target.value})}
+                  >
+                    <option value="">Select Dental Service</option>
                     {services.map(s => <option key={s.id} value={s.id}>{s.name}</option>)}
                   </select>
                 </div>
 
                 <div className="col-md-6">
-                  <label className="small fw-bold text-muted mb-2 ms-2">Preferred Date</label>
-                  <input type="date" className="form-control border-0 py-3 px-4 sleek-input shadow-sm" required 
-                    value={formData.date} onChange={(e) => setFormData({...formData, date: e.target.value})} />
+                  <label htmlFor="appt-date" className="small fw-bold text-muted mb-2 ms-2">Preferred Date <span aria-hidden="true">*</span></label>
+                  <input
+                    id="appt-date"
+                    type="date"
+                    className="form-control border-0 py-3 px-4 sleek-input shadow-sm"
+                    aria-required="true"
+                    required
+                    value={formData.date}
+                    onChange={(e) => setFormData({...formData, date: e.target.value})}
+                  />
                 </div>
 
                 <div className="col-md-6">
-                  <label className="small fw-bold text-muted mb-2 ms-2">Preferred Time</label>
-                  <input type="time" className="form-control border-0 py-3 px-4 sleek-input shadow-sm" required 
-                    value={formData.time} onChange={(e) => setFormData({...formData, time: e.target.value})} />
+                  <label htmlFor="appt-time" className="small fw-bold text-muted mb-2 ms-2">Preferred Time <span aria-hidden="true">*</span></label>
+                  <input
+                    id="appt-time"
+                    type="time"
+                    className="form-control border-0 py-3 px-4 sleek-input shadow-sm"
+                    aria-required="true"
+                    required
+                    value={formData.time}
+                    onChange={(e) => setFormData({...formData, time: e.target.value})}
+                  />
                 </div>
 
-                {/* FIX: Better flex wrapping and dynamic widths for absolute responsiveness */}
                 <div className="col-12 mt-4 d-flex flex-column flex-md-row align-items-center justify-content-start gap-3">
                   <button 
                     type="submit" 
@@ -345,7 +392,7 @@ const AppointmentForm = ({ formRef}) => {
                   >
                     BOOK APPOINTMENT NOW
                   </button>
-                  <span className="small text-muted m-0 text-center text-md-start">* Required Fields</span>
+                  <span className="small text-muted m-0 text-center text-md-start"><span aria-hidden="true">*</span> Required Fields</span>
                 </div>
               </div>
             </form>
@@ -371,12 +418,25 @@ const AppointmentForm = ({ formRef}) => {
 
       {/* Success/Error Modal */}
       {showModal && (
-        <div className="modal d-block" style={{ backgroundColor: 'rgba(0,0,0,0.5)', zIndex: 10000, position: 'fixed', top: 0, left: 0, width: '100%', height: '100%' }}>
+        <div
+          className="modal d-block"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="appt-modal-title"
+          style={{ backgroundColor: 'rgba(0,0,0,0.5)', zIndex: 10000, position: 'fixed', top: 0, left: 0, width: '100%', height: '100%' }}
+        >
           <div className="modal-dialog modal-dialog-centered" style={{ maxWidth: '400px' }}>
             <div className="modal-content border-0 rounded-4 shadow-lg p-5 text-center">
-              <h3 className="fw-bold mb-3" style={{ color: '#003366' }}>{isError ? "Oops!" : "Perfect!"}</h3>
+              <h3 id="appt-modal-title" className="fw-bold mb-3" style={{ color: '#003366' }}>{isError ? "Oops!" : "Perfect!"}</h3>
               <p className="text-muted mb-4">{modalMessage}</p>
-              <button className="btn btn-primary w-100 py-3 fw-bold rounded-pill" onClick={() => setShowModal(false)} style={{ backgroundColor: '#003366', border: 'none' }}>CLOSE</button>
+              <button
+                className="btn btn-primary w-100 py-3 fw-bold rounded-pill"
+                onClick={() => setShowModal(false)}
+                aria-label="Close appointment confirmation"
+                style={{ backgroundColor: '#003366', border: 'none' }}
+              >
+                CLOSE
+              </button>
             </div>
           </div>
         </div>

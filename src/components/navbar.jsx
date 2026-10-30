@@ -86,10 +86,12 @@ const Navbar = ({ formRef }) => {
             className="navbar-toggler" 
             type="button" 
             onClick={toggleMenu}
-            aria-label="Toggle navigation"
+            aria-label="Toggle navigation menu"
+            aria-expanded={isOpen}
+            aria-controls="navbarTogglerMenu"
             style={{ padding: '6px 10px', fontSize: '1.25rem', border: '1px solid #ddd' }}
           >
-            <span className="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon" aria-hidden="true"></span>
           </button>
 
           {/* Responsive Navigation Menu */}
@@ -134,6 +136,8 @@ const Navbar = ({ formRef }) => {
                 </a>
                 <button 
                   className="btn-modern-appointment" 
+                  type="button"
+                  aria-label="Book a dental appointment"
                   style={{ padding: '10px 24px', borderRadius: '30px', whiteSpace: 'nowrap', fontWeight: '600' }}
                   onClick={() => {
                     formRef.current.scrollIntoView({ behavior: "smooth" });
